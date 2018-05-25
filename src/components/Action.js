@@ -1,15 +1,26 @@
 import React from 'react';
 import Option from './Option';
+import Ionicon from 'react-ionicons';
 
-const Action = ({options, handlePick, hasOptions, handleDeleteOption, contact}) => (
-  <div>
+const Action = ({ contact }) => (
+  <div className="option big-button">
+    <div>
+      {contact.firstName}
+    </div>
+    <div>
+      {contact.phoneNumber}
+    </div>
+    <div>
+      {contact.email}
+    </div>
     <button
-      className="big-button"
-      onClick={handlePick}
-      disabled={!hasOptions}
-    >
-    i am here {contact.firstName}
-      </button>
+      className="button button--link">
+      <Ionicon
+        icon="ios-edit"
+        rotate={true}
+        color="black"
+      />
+    </button>
   </div>
 );
 

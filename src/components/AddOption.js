@@ -6,14 +6,13 @@ import { createContact } from '../actions';
 
 class AddOption extends Component {
   renderField(field) {
-    const {gridWidth} = field
     return (
-      <div className={"form-group " + gridWidth}>
-        <label>
+      <div className={"form-group " + field.gridWidth}>
+        <label className="addContact__Label">
           {field.label}
         </label>
         <input
-          className="form-control add-option__input"
+          className="form-control"
           type="text"
           {...field.input}
         />
@@ -23,14 +22,14 @@ class AddOption extends Component {
   }
 
   onSubmit(values) {
-    // this.props.handleAddOption(values);
-    this.props.createContact(values);
+    this.props.handleAddOption(values);
+    // this.props.createContact(values);
   }
 
   render() {
-    const { handleSubmit, pristine, submitting } = this.props;
+    const { handleSubmit } = this.props;
     return (
-      <form className="container add-option" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+      <form className="col-xs-12 pad-0" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <Field
           label="First name"
           name="firstName"
@@ -49,6 +48,7 @@ class AddOption extends Component {
           label="E-mail"
           name="email"
           type="email"
+          gridWidth="col-xs-12"
           component={this.renderField}
         />
         <Field
@@ -66,12 +66,11 @@ class AddOption extends Component {
           component={this.renderField}
         />
         <button type="submit"
-          className="button"
-          disabled={pristine || submitting}
+          className="button col-xs-12"
         >
           Add Option
          </button>
-        <Link className="btn btn-danger button" to="/" >
+        <Link className="btn btn-danger button col-xs-12" to="/" >
           Cancel
            </Link>
       </form>
@@ -87,7 +86,7 @@ function validate(values) {
   if (!values.email || (values.email ? values.email.length <= 6 : false)) {
       errors.email = "Email is not valid"
   }
-  if (!values.phoneNumber || (values.phoneNumber ? values.phoneNumber.length <= 10 : false)) {
+  if (!values.phoneNumber) {
       errors.phoneNumber = "Number is not valid"
   }
 
@@ -96,7 +95,7 @@ function validate(values) {
 
 export default reduxForm({
   validate,
-  form: 'PostsNewForm'
+  form: 'AddOption'
 })(
   connect(null, { createContact })(AddOption)
   );

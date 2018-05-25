@@ -1,22 +1,27 @@
 import React from 'react';
+import Ionicon from 'react-ionicons';
 
-const Option = ({count, contact, handleDeleteOption, handlePick, index}) => (
+const Option = ({ count, contact, handleDeleteOption, handlePick, index }) => (
   <div className="option">
-    {<p className="option__text">{count}.</p>}
-    <div>
-      {contact.firstName[0]}
-    </div>
-    <div>
+
+      { <div className="option-intials"><div className="option__bold"><b>{contact.firstName[0]}</b></div></div>}
+
+    <div onClick={() => handlePick(index)}>
       {contact.firstName}
     </div>
-     <button
+
+    <button
       className="button button--link"
       onClick={(e) => {
         handleDeleteOption(index);
       }}
     >
-      remove
-      </button>
+      <Ionicon
+        icon="ios-trash"
+        rotate={true}
+        color="black"
+      />
+    </button>
   </div>
 );
 
