@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const FETCH_POSTS = 'fetchPosts';
+export const EDIT_CONTACT = 'editContact';
 export const CREATE_POST = 'createPost';
 export const FETCH_POST = 'fetchPost';
 export const DELETE_POST='delete_post';
@@ -25,11 +25,11 @@ export function createContact(values){
     }
 }
 
-export function fetchPost(id){
-    const request = axios.get(`${rootUrl}/posts/${id}${apiKey}`)
+export function editContact(index){
+    
     return {
-        type:FETCH_POST,
-        payload : request
+        type:EDIT_CONTACT,
+        payload : index
     }
 }
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import Option from './Option';
 import Ionicon from 'react-ionicons';
+import { editContact } from '../actions';
 
-const Action = ({ contact }) => (
+const Action = ({ contact, handleEdit }) => (
   <div className="option big-button">
     <div>
       {contact.firstName}
@@ -10,10 +11,11 @@ const Action = ({ contact }) => (
     <div>
       {contact.phoneNumber}
     </div>
-    <div>
+    <div  onClick={() => handleEdit(index)}>
       {contact.email}
     </div>
     <button
+    onClick={() => handleEdit(index)}
       className="button button--link">
       <Ionicon
         icon="ios-edit"

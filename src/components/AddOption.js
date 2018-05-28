@@ -4,6 +4,15 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createContact } from '../actions';
 
+const data = {
+  // used to populate "account" reducer when "Load" is clicked
+  firstName: 'Jane',
+  lastName: 'Doe',
+  email: '42',
+  phoneNumber: 9023825856,
+  status: true,
+};
+
 class AddOption extends Component {
   renderField(field) {
     return (
@@ -27,9 +36,12 @@ class AddOption extends Component {
   }
 
   render() {
-    const { handleSubmit } = this.props;
+    const { handleSubmit, load, handleEdit } = this.props;
     return (
       <form className="col-xs-12 pad-0" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+        <div>
+          <button type="button" onClick={() => load(data)}>Load Account</button>
+        </div>
         <Field
           label="First name"
           name="firstName"
@@ -81,13 +93,13 @@ class AddOption extends Component {
 function validate(values) {
   const errors = {}
   if (!values.firstName || (values.firstName ? values.firstName.length <= 3 : false)) {
-      errors.firstName = "Name is not valid"
+    errors.firstName = "Name is not valid"
   }
   if (!values.email || (values.email ? values.email.length <= 6 : false)) {
-      errors.email = "Email is not valid"
+    errors.email = "Email is not valid"
   }
   if (!values.phoneNumber) {
-      errors.phoneNumber = "Number is not valid"
+    errors.phoneNumber = "Number is not valid"
   }
 
   return errors
@@ -97,5 +109,7 @@ export default reduxForm({
   validate,
   form: 'AddOption'
 })(
-  connect(null, { createContact })(AddOption)
-  );
+  connect(state => ({
+    initialValues: state.editContact, // pull initial values from account reducer
+  }))(AddOption)
+);

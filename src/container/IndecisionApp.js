@@ -23,7 +23,9 @@ export default class IndecisionApp extends React.Component {
     }));
   };
   handleEdit = (selectedContacted) => {
-    
+    this.setState((prevState) => ({
+      editContact: prevState.options[selectedContacted]
+    }));
   };
   handlePick = (selectedContacted) => {
     // const randomNum = Math.floor(Math.random() * this.state.options.length);
@@ -70,8 +72,7 @@ export default class IndecisionApp extends React.Component {
     const contactItem = this.state.selectedOption ?
       <Action
         contact={this.state.selectedOption}
-        hasOptions={this.state.options.length > 0}
-        handlePick={this.handlePick}
+        handleEdit={this.handleEdit}
       /> :
       <Action contact={{}} />;
 
