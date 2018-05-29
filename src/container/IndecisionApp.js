@@ -9,7 +9,14 @@ import ContactList from '../components/contactList';
 export default class IndecisionApp extends React.Component {
   state = {
     options: [],
-    selectedOption: undefined
+    selectedOption: undefined,
+    editContact : {
+      firstName: 'Jane',
+      lastName: 'Doe',
+      email: '42',
+      phoneNumber: 9023825856,
+      status: true,
+    }
   };
   handleDeleteOptions = () => {
     this.setState(() => ({ options: [] }));

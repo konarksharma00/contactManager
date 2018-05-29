@@ -2,8 +2,9 @@ import React from 'react';
 import Option from './Option';
 import Ionicon from 'react-ionicons';
 import { editContact } from '../actions';
+import { connect } from 'react-redux';
 
-const Action = ({ contact, handleEdit }) => (
+const Action = ({ contact, handleEdit, editContact }) => (
   <div className="option big-button">
     <div>
       {contact.firstName}
@@ -11,7 +12,7 @@ const Action = ({ contact, handleEdit }) => (
     <div>
       {contact.phoneNumber}
     </div>
-    <div  onClick={() => handleEdit(index)}>
+    <div  onClick={() => editContact(1)}>
       {contact.email}
     </div>
     <button
@@ -26,4 +27,4 @@ const Action = ({ contact, handleEdit }) => (
   </div>
 );
 
-export default Action;
+export default connect(null, {editContact})(Action);

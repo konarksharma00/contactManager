@@ -32,11 +32,11 @@ class AddOption extends Component {
 
   onSubmit(values) {
     this.props.handleAddOption(values);
-    // this.props.createContact(values);
   }
 
   render() {
-    const { handleSubmit, load, handleEdit } = this.props;
+    const { handleSubmit, load, handleEdit, reset } = this.props;
+    console.log(this.props.initialValues);
     return (
       <form className="col-xs-12 pad-0" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <div>
@@ -77,14 +77,12 @@ class AddOption extends Component {
           gridWidth="col-xs-6"
           component={this.renderField}
         />
-        <button type="submit"
-          className="button col-xs-12"
-        >
+        <button type="submit" className="button col-xs-12">
           Add Option
          </button>
-        <Link className="btn btn-danger button col-xs-12" to="/" >
-          Cancel
-           </Link>
+        <button className="btn btn-danger col-xs-12" onClick={reset} >
+          Clear Values
+           </button>
       </form>
     )
   }
@@ -105,11 +103,20 @@ function validate(values) {
   return errors
 };
 
-export default reduxForm({
-  validate,
-  form: 'AddOption'
-})(
-  connect(state => ({
-    initialValues: state.editContact, // pull initial values from account reducer
-  }))(AddOption)
-);
+// const mapDisPatchToProps = dispatch => ({
+//   onReset: dispatch(reset('AddOption'))
+// })
+
+const mapStatetoprops = (state)=>{
+  return {
+    initialValues: data
+  }
+};
+
+AddOption = reduxForm({
+  form: 'AddOption', // a unique identifier for this form
+})(AddOption);
+
+AddOption = connect(mapStatetoprops)(AddOption);
+
+export default AddOption;
