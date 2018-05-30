@@ -446,7 +446,7 @@ button:disabled {
 .button {
   background: #02b9f7;
   border: none;
-  border-bottom: 0.3rem solid #0293c4;
+  border-bottom: 0.1rem solid #5a607b;
   color: white;
   font-weight: 500;
   padding: 1.2rem; }
@@ -524,8 +524,7 @@ button:disabled {
 .modal__body {
   font-size: 2rem;
   font-weight: 300;
-  margin: 0 0 2.2rem 0;
-  word-break: break-all; }
+  margin: 0 0 2.2rem 0; }
 
 .modal__sml {
   background: #464B5E;
@@ -577,6 +576,13 @@ button:disabled {
   color: #a5afd7;
   display: flex;
   justify-content: space-between;
+  padding: 1.6rem; }
+
+.widget-contact-header {
+  background: #3c4251;
+  color: #a5afd7;
+  display: flex;
+  justify-content: center;
   padding: 1.6rem; }
 
 .widget-header__title {
