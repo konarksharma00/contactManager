@@ -24,6 +24,14 @@
   padding: $m-size;
 }
 
+.widget-contact-header {
+  background: $blue;
+  color: $off-white;
+  display: flex;
+  justify-content: center;
+  padding: $m-size;
+}
+
 .widget-header__title {
   margin: 0;
 }

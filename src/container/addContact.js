@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createContact } from '../actions';
 
-const status = ['Yes', 'No']
+const status = ['Active', 'In-Active']
 
 class AddContact extends Component {
 
@@ -132,7 +132,7 @@ const mapStatetoprops = (state) => {
 
 AddContact = reduxForm({
   validate,
-  form: 'AddContact', // a unique identifier for this form
+  form: 'AddContact',
   enableReinitialize: true,
   onSubmitSuccess: afterSubmit,
 })(AddContact);

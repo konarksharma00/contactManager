@@ -16,10 +16,12 @@ class IndecisionApp extends React.Component {
   };
   //to remove all the contacts
   handleDeleteContacts = () => {
-    this.setState(() => ({ contacts: [] }));
+    this.setState(() => ({ contacts: [], selectedOption: undefined}));
+    this.props.resetForm();
   };
 
   //to clear updated contact
+  // invoked from **"optionModal"** component
   handleClearUpdate = () => {
     this.setState(() => ({ listUpdated: false }));
     this.props.history.push('/')

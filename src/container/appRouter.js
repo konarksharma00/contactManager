@@ -9,11 +9,21 @@ import reducers from '../reducers';
 import App from './contactManager';
 import OptionModal from '../components/OptionModal';
 
-const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+const createStoreWithMiddleware = applyMiddleware(promise);
+
+const defaultState = {
+  contact:undefined
+};
+
+const store = createStore(
+  reducers,
+  defaultState,
+  createStoreWithMiddleware,
+  );
 
 const AppRouter = () => {
     return (
-        <Provider store={createStoreWithMiddleware(reducers)}>
+        <Provider store={store}>
         <BrowserRouter>
           <div>
             <Switch>
