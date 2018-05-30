@@ -1,6 +1,6 @@
 import React from 'react';
 import Option from './Option';
-// import Ionicon from 'react-ionicons';
+import Ionicon from 'react-ionicons';
 import { editContact } from '../actions';
 import { connect } from 'react-redux';
 
@@ -20,11 +20,11 @@ const Action = ({ contact, editContact, info }) => (
     <button
       onClick={() => editContact(contact)}
       className="button-edit col-xs-12"> Edit
-    {/* <Ionicon
+    <Ionicon
       icon="ios-edit"
       rotate={true}
       color="black"
-    /> */}
+    />
     </button>
   </div>
 );
