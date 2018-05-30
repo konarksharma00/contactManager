@@ -111,8 +111,8 @@ class IndecisionApp extends React.Component {
             {contactItem}
             <div className="widget">
               <Options
-                contacts={this.state.contacts}
                 handleDeleteContacts={this.handleDeleteContacts}
+                numberOfContacts={this.state.contacts.length}
               />
               <AddContact
                 handleAddContact={this.handleAddContact}

@@ -8,7 +8,6 @@ const ContactList = ({ contacts, hasOptions, handleDeleteContact, handlePick, nu
 		</div>
 		<div
 			className="big-button"
-			disabled={!hasOptions}
 		>
 			{
 				contacts.map((contact, index) => (

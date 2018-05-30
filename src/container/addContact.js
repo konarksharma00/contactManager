@@ -95,7 +95,7 @@ class AddContact extends Component {
         <button type="submit" className="button col-xs-12">
           Add Contact
          </button>
-        <button className="btn btn-danger col-xs-12" >
+        <button className="button-clear col-xs-12" >
           Clear Values
            </button>
       </form>

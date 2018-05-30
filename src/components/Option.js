@@ -1,7 +1,7 @@
 import React from 'react';
 // import Ionicon from 'react-ionicons';
 
-const Option = ({ count, contact, handleDeleteOption, handlePick, index }) => (
+const Option = ({ count, contact, handleDeleteContact, handlePick, index }) => (
   <div className="option">
 
       { <div className="option-intials"><div className="option__bold"><b>{contact.firstName[0]}</b></div></div>}
@@ -13,7 +13,7 @@ const Option = ({ count, contact, handleDeleteOption, handlePick, index }) => (
     <button
       className="button button--link"
       onClick={(e) => {
-        handleDeleteOption(index);
+        handleDeleteContact(index);
       }}
     > remove
       {/* <Ionicon
