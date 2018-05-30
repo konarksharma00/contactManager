@@ -8,7 +8,7 @@ const Action = ({ contact, editContact, info }) => (
   <div>
     <div className="option edit">
       <div>
-        {contact.firstName}
+        {contact.firstName} {contact.lastName}
       </div>
       <div>
         {contact.phoneNumber}{info}

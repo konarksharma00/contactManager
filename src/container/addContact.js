@@ -1,13 +1,17 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { Field, reduxForm, reset } from 'redux-form';
+import { Field, reduxForm, reset as submitreset} from 'redux-form';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { createContact } from '../actions';
+import { createContact, resetForm } from '../actions';
 
 const status = ['Active', 'In-Active']
 
 class AddContact extends Component {
+
+  test = ()=>{
+    
+  }
 
   renderField(field) {
     const { meta } = field
@@ -54,7 +58,7 @@ class AddContact extends Component {
   }
 
   render() {
-    const { handleSubmit, handleEdit, reset } = this.props;
+    const { handleSubmit, handleEdit, reset, resetForm } = this.props;
     return (
       <form className="col-xs-12 pad-0 border-site" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <Field
@@ -95,7 +99,7 @@ class AddContact extends Component {
         <button type="submit" className="button col-xs-12">
           Add Contact
          </button>
-        <button className="button-clear col-xs-12" >
+        <button type="button" onClick={(e)=>{reset(); resetForm()}} className="button-clear col-xs-12" >
           Clear Values
            </button>
       </form>
@@ -121,7 +125,7 @@ function validate(values) {
 
 // handling form submission succes
 const afterSubmit = (result, dispatch) => {
-  return dispatch(reset('AddContact'));
+  return dispatch(submitreset('AddContact'));
 }
 
 const mapStatetoprops = (state) => {
@@ -137,6 +141,6 @@ AddContact = reduxForm({
   onSubmitSuccess: afterSubmit,
 })(AddContact);
 
-AddContact = connect(mapStatetoprops)(AddContact);
+AddContact = connect(mapStatetoprops, { resetForm })(AddContact);
 
 export default AddContact;

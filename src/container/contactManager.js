@@ -13,6 +13,7 @@ class IndecisionApp extends React.Component {
     contacts: [],
     selectedOption: undefined,
     listUpdated: false,
+    modalMessage:undefined
   };
   //to remove all the contacts
   handleDeleteContacts = () => {
@@ -39,10 +40,10 @@ class IndecisionApp extends React.Component {
     this.state.contacts[this.state.index] = selectedContacted;
     this.setState((prevState) => ({
       listUpdated: true,
+      modalMessage:'Contact updated successfuly'
     }));
     const json = JSON.stringify(this.state.contacts);
     localStorage.setItem('contacts', json);
-    this.props.history.push('/modal')
   };
   handlePick = (index) => {
     this.setState((prevState) => ({
@@ -62,6 +63,11 @@ class IndecisionApp extends React.Component {
     if (!found) {
       this.setState((prevState) => ({
         contacts: prevState.contacts.concat(option)
+      }));
+    } else {
+      this.setState((prevState) => ({
+        listUpdated: true,
+        modalMessage:'Contact already exists, you can not add same number twice!'
       }));
     }
   };
@@ -126,6 +132,7 @@ class IndecisionApp extends React.Component {
         <OptionModal
           listUpdated={this.state.listUpdated}
           handleClearUpdate={this.handleClearUpdate}
+          modalMessage={this.state.modalMessage}
         />
       </div>
     );
