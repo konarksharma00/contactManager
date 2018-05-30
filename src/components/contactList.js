@@ -1,7 +1,7 @@
 import React from 'react';
 import Option from './Option';
 
-const ContactList = ({ options, hasOptions, handleDeleteOption, handlePick, numberOfContacts }) => (
+const ContactList = ({ contacts, hasOptions, handleDeleteContact, handlePick, numberOfContacts, listUpdated }) => (
 	<div className="col-xs-12 pad-0">
 		<div className="widget-header">
 			<h3 className="widget-header__title">{numberOfContacts} Contacts saved</h3>
@@ -11,13 +11,13 @@ const ContactList = ({ options, hasOptions, handleDeleteOption, handlePick, numb
 			disabled={!hasOptions}
 		>
 			{
-				options.map((option, index) => (
+				contacts.map((contact, index) => (
 					<Option
 						key={index}
 						index={index}
-						contact={option}
+						contact={contact}
 						count={index + 1}
-						handleDeleteOption={handleDeleteOption}
+						handleDeleteContact={handleDeleteContact}
 						handlePick={handlePick}
 					/>
 				))

@@ -2,7 +2,7 @@
 .big-button {
   background: $purple;
   border: none;
-  border-bottom: .6rem solid darken($purple, 10%);
+  // border-bottom: .6rem solid darken($purple, 10%);
   color: white;
   font-weight: bold;
   font-size: $m-size;
@@ -35,4 +35,18 @@
   border: none;
   color: $off-white;
   padding: 0;
+}
+.button-edit{
+  margin-bottom: 1rem;
+  background: #a8afd8;
+}
+
+.edit{
+  background: #02b9f7;
+  border: none;
+  border-bottom: 0.6rem solid #693cad;
+  color: white;
+  font-weight: bold;
+  font-size: 1.6rem;
+  width: 100%;
 }

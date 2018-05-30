@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/e076116/.nvm/versions/node/v8.6.0/bin/node /Users/e076116/.nvm/versions/node/v8.6.0/bin/yarn build
+  /Users/e076116/.nvm/versions/node/v8.6.0/bin/node /Users/e076116/.nvm/versions/node/v8.6.0/bin/yarn add react-ionicons
 
 PATH: 
   /Users/e076116/.nvm/versions/node/v8.6.0/bin:/Users/e076116/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -21,7 +21,7 @@ npm manifest:
     "author": "Andrew Mead",
     "license": "MIT",
     "scripts": {
-      // "serve": "live-server public/",
+      "serve": "live-server public/",
       "build": "webpack",
       "dev-server": "webpack-dev-server"
     },
@@ -43,8 +43,8 @@ npm manifest:
       "react-modal": "2.2.2",
       "react-redux": "^5.0.7",
       "react-router-dom": "^4.2.2",
-      "redux": "^3.0.4",
-      "redux-form": "^7.1.1",
+      "redux": "3.7.2",
+      "redux-form": "7.3.0",
       "redux-promise": "^0.5.3",
       "sass-loader": "6.0.6",
       "style-loader": "0.18.2",
@@ -4524,7 +4524,7 @@ Lockfile:
     dependencies:
       balanced-match "^0.4.2"
   
-  redux-form@^7.1.1:
+  redux-form@7.3.0:
     version "7.3.0"
     resolved "https://registry.yarnpkg.com/redux-form/-/redux-form-7.3.0.tgz#b92ef1639c86a6009b0821aacfc80ad8b5ac8c05"
     dependencies:
@@ -4543,7 +4543,7 @@ Lockfile:
     dependencies:
       flux-standard-action "^0.6.1"
   
-  redux@^3.0.4:
+  redux@3.7.2:
     version "3.7.2"
     resolved "https://registry.yarnpkg.com/redux/-/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
     dependencies:
@@ -5672,10 +5672,14 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  SyntaxError: /Users/e076116/Downloads/r-09-11-favicon/r-09-11-favicon/package.json: Unexpected token / in JSON at position 140
-      at JSON.parse (<anonymous>)
-      at /Users/e076116/.nvm/versions/node/v8.6.0/lib/node_modules/yarn/lib/cli.js:770:59
-      at Generator.next (<anonymous>)
-      at step (/Users/e076116/.nvm/versions/node/v8.6.0/lib/node_modules/yarn/lib/cli.js:92:30)
-      at /Users/e076116/.nvm/versions/node/v8.6.0/lib/node_modules/yarn/lib/cli.js:103:13
-      at <anonymous>
+  Error: https://registry.yarnpkg.com/is-function/-/is-function-1.0.1.tgz: Request failed "503 Service Unavailable"
+      at Request.<anonymous> (/Users/e076116/.nvm/versions/node/v8.6.0/lib/node_modules/yarn/lib/cli.js:59356:26)
+      at emitOne (events.js:115:13)
+      at Request.emit (events.js:210:7)
+      at Request.module.exports.Request.onRequestResponse (/Users/e076116/.nvm/versions/node/v8.6.0/lib/node_modules/yarn/lib/cli.js:123971:10)
+      at emitOne (events.js:115:13)
+      at ClientRequest.emit (events.js:210:7)
+      at HTTPParser.parserOnIncomingClient (_http_client.js:565:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:116:23)
+      at TLSSocket.socketOnData (_http_client.js:454:20)
+      at emitOne (events.js:115:13)

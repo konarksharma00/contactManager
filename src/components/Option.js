@@ -1,5 +1,5 @@
 import React from 'react';
-import Ionicon from 'react-ionicons';
+// import Ionicon from 'react-ionicons';
 
 const Option = ({ count, contact, handleDeleteOption, handlePick, index }) => (
   <div className="option">
@@ -15,12 +15,12 @@ const Option = ({ count, contact, handleDeleteOption, handlePick, index }) => (
       onClick={(e) => {
         handleDeleteOption(index);
       }}
-    >
-      <Ionicon
+    > remove
+      {/* <Ionicon
         icon="ios-trash"
         rotate={true}
         color="black"
-      />
+      /> */}
     </button>
   </div>
 );

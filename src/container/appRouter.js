@@ -6,7 +6,8 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import promise from 'redux-promise';
 
 import reducers from '../reducers';
-import App from './IndecisionApp';
+import App from './contactManager';
+import OptionModal from '../components/OptionModal';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -17,6 +18,7 @@ const AppRouter = () => {
           <div>
             <Switch>
               <Route path="/" component={ App } />
+              <Route path="/modal" component={ OptionModal } />
             </Switch>
           </div>
         </BrowserRouter>
