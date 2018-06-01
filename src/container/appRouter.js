@@ -22,6 +22,7 @@ const AppRouter = () => {
       <BrowserRouter>
         <div>
           <Switch>
+            <Route path="/about" component={Readme} />
             <Route path="/" component={App} />
           </Switch>
         </div>

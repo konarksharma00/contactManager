@@ -1,0 +1,17 @@
+.readme-header{
+    background: linear-gradient(to right, #012c70 43%, #02b9f7 );
+	border: 1px solid whitesmoke;
+	color: white;
+	padding: 1rem;
+	text-align: center;
+}
+
+.readme-left{
+	background: $off-black;
+	color: white;
+	padding-bottom: 9px;
+}
+
+.readme-right{
+	background: $purple;
+}

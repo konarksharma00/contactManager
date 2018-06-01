@@ -13,6 +13,7 @@ Webpack
 Babel
 SCSS
 yarn
+GIT
 
 ```
 ## Website link
@@ -29,6 +30,8 @@ Babel to tranpile es6
 yarn to better the perfomance as it runs faster than npm
 
 Using local storage to save the contacts
+
+GIT for version control
 
 
 ### Getting Started
