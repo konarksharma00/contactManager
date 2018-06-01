@@ -13,11 +13,11 @@ class IndecisionApp extends React.Component {
     contacts: [],
     selectedOption: undefined,
     listUpdated: false,
-    modalMessage:undefined
+    modalMessage: undefined
   };
   //to remove all the contacts
   handleDeleteContacts = () => {
-    this.setState(() => ({ contacts: [], selectedOption: undefined}));
+    this.setState(() => ({ contacts: [], selectedOption: undefined }));
     this.props.resetForm();
   };
 
@@ -40,12 +40,17 @@ class IndecisionApp extends React.Component {
     this.state.contacts[this.state.index] = selectedContacted;
     this.setState((prevState) => ({
       listUpdated: true,
-      modalMessage:'Contact updated successfuly'
+      modalMessage: 'Contact updated successfuly'
     }));
     const json = JSON.stringify(this.state.contacts);
     localStorage.setItem('contacts', json);
   };
   handlePick = (index) => {
+    window.scroll({
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+    });
     this.setState((prevState) => ({
       selectedOption: prevState.contacts[index],
       index
@@ -67,7 +72,7 @@ class IndecisionApp extends React.Component {
     } else {
       this.setState((prevState) => ({
         listUpdated: true,
-        modalMessage:'Contact already exists, you can not add same number twice!'
+        modalMessage: 'Contact already exists, you can not add same number twice!'
       }));
     }
   };
@@ -95,6 +100,12 @@ class IndecisionApp extends React.Component {
   render() {
     const subtitle = 'Not knowing a contact when needed is annoying!!!';
     const info = 'Click on the contact to select'
+
+    const options = this.state.contacts.length >= 1 ? <Options
+      handleDeleteContacts={this.handleDeleteContacts}
+      numberOfContacts={this.state.contacts.length}
+    /> : null;
+
     const contactItem = this.state.selectedOption ?
       <Action
         contact={this.state.selectedOption}
@@ -106,7 +117,17 @@ class IndecisionApp extends React.Component {
       <div>
         <Header subtitle={subtitle} />
         <div className="col-xs-12">
-          <aside className="col-xs-4 ccontacList">
+          <div className="col-sm-8 col-xs-12 contacListView">
+            {contactItem}
+            <div className="widget">
+              {options}
+              <AddContact
+                handleAddContact={this.handleAddContact}
+                handleEdit={this.handleEdit}
+              />
+            </div>
+          </div>
+          <aside className="col-sm-4 col-xs-12 ccontacList">
             <ContactList
               contacts={this.state.contacts}
               numberOfContacts={this.state.contacts.length}
@@ -115,19 +136,6 @@ class IndecisionApp extends React.Component {
               listUpdated={this.state.listUpdated}
             />
           </aside>
-          <div className="col-xs-8 contacListView">
-            {contactItem}
-            <div className="widget">
-              <Options
-                handleDeleteContacts={this.handleDeleteContacts}
-                numberOfContacts={this.state.contacts.length}
-              />
-              <AddContact
-                handleAddContact={this.handleAddContact}
-                handleEdit={this.handleEdit}
-              />
-            </div>
-          </div>
         </div>
         <OptionModal
           listUpdated={this.state.listUpdated}

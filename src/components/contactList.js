@@ -7,7 +7,7 @@ const ContactList = ({
 	handlePick,
 	numberOfContacts,
 	listUpdated }) => (
-		<div className="col-xs-12 pad-0">
+		<div className="col-xs-12 pad-0" id="contacts">
 			<div className="widget-contact-header">
 				<h3 className="widget-header__title">{numberOfContacts} Contacts saved</h3>
 			</div>

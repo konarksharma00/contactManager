@@ -35,3 +35,10 @@
 .widget-header__title {
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .contacListView {
+      padding: 0;
+      margin-bottom: 2rem;
+  }
+}

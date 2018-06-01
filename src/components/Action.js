@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 const Action = ({ contact, editContact, info }) => (
   <div>
-    <div className="option edit">
+    <div className=" option-header option edit">
       <div>
         {contact.firstName} {contact.lastName}
       </div>
@@ -19,7 +19,7 @@ const Action = ({ contact, editContact, info }) => (
     </div>
     <button
       onClick={() => editContact(contact)}
-      className="button-edit col-xs-12"> Edit
+      className="button-edit col-xs-12"> Edit Selected Contact
     <Ionicon
       icon="ios-edit"
       rotate={true}

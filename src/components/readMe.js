@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Readme = (props) => (
-  <div className="col-xs-12">
+  <div className="col-sm-12">
     <div className="col-xs-12 readme-header">
       <h4>
         CONTACT MANAGER
@@ -16,6 +16,7 @@ const Readme = (props) => (
       </h4>
       <ul>
         <li>Node/Express for the server</li>
+        <li>Bootstrap/CSS media queries for responsiveness</li>
         <li>React</li>
         <li>Redux</li>
         <li>ES6</li>

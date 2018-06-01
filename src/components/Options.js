@@ -1,10 +1,10 @@
 import React from 'react';
-import Option from './Option';
 
 const Options = ({handleDeleteContacts, numberOfContacts}) => (
   <div>
     <div className="widget-header">
-      <h3 className="widget-header__title">Your Contacts</h3>
+      <h3 className="widget-header__title hidden-xs-down">Your Contacts</h3>
+      <h4 className="widget-header__title hidden-sm-up"><a href="#contacts">Your Contacts</a></h4>
       <button
         className="button button--link"
         onClick={handleDeleteContacts}

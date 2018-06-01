@@ -9,3 +9,9 @@
     overflow-x: hidden;
     border: 1px solid #5b617b;
 }
+
+@media (max-width: 768px) {
+    .ccontacList {
+        position: relative;
+    }
+  }

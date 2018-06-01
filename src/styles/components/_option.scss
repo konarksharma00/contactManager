@@ -24,3 +24,14 @@
 .option__bold{
   margin: 10px 0px 0 15px;
 }
+
+@media (max-width: 768px) {
+  .option-header {
+    border-bottom: 1px solid #5c627b;
+    display: table;
+    justify-content: space-between;
+    padding: 2.2rem 1.6rem;
+    text-align: center;
+  }
+}
+

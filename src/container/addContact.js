@@ -9,10 +9,6 @@ const status = ['Active', 'In-Active']
 
 class AddContact extends Component {
 
-  test = ()=>{
-    
-  }
-
   renderField(field) {
     const { meta } = field
     const danger = `form-group ${field.gridWidth} ${meta.touched && meta.error? 'has-danger' : ''}`
